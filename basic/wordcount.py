@@ -48,21 +48,39 @@ import sys
 ###
 def print_words(filename):
   words_and_counts = build_dict(filename)
+  for word in sorted(words_and_counts.keys()): # sort on words
+    print word, words_and_counts[word]
+
 
 def print_top(filename):
   words_and_counts = build_dict(filename)
-
+  topcount = len(words_and_counts)
+  if topcount > 20: topcount = 20
+  i = 0
+  for key, value in sorted(words_and_counts.iteritems(), key=lambda (k,v): (v,k), reverse=True):
+    if i < topcount:
+      print "%s %d" % (key, value)
+      i += 1
+    else:
+      break
 """
 Reads through the given file, builds and returns a dict with:
 keys -- words that appear in the file, converted to lowercase
 values -- the number of times the word appears in the file
 """
 def build_dict(filename):
+  new_dict = {}
   f = open(filename, 'rU')
   for line in f:
     words = line.split() # split on whitespace chars to get list of words
-    print words
-  sys.exit(0)  
+    # add each word to dict
+    for word in words:
+      word = word.lower()
+      if word in new_dict: 
+        new_dict[word] += 1 # if word found, increment count
+      else: 
+        new_dict[word] = 1 # else add word to dict
+  return new_dict
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
