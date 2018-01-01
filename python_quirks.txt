@@ -1,0 +1,54 @@
+***********************************************************************
+ LEARNING PYTHON
+ Notes // Started Dec. 29, 2017
+ Last Updated: Dec 29, 2017
+***********************************************************************
+
+
+---------
+ GENERAL
+---------
+* put parentheses around code that runs longer than one line
+* mimic printf with print "expression containing vars" % (list of vars)
+* boolean operators: spelled out "and", "or", etc. (not && || !)
+* if/elif/else:
+* boolean tests do not use ()
+* python is not typed: variable names are key to making code readable
+  and avoiding typing mistakes
+
+---------
+ STRINGS
+---------
+* no scalar char type
+* string is str
+* string methods:
+        - s.replace("old", "new") returns the string s with all instances
+          of "old" replaced by "new"
+        - s.strip: remove leading/trailing whitespace
+        - s.startswith(str) and endswith(str)
+        - .find == .indexOf
+        - s.split(): return list of substrings separated at given string,
+          if no string given then uses whitespace
+        - s.join(): opposite of split, join a list into a string with each
+          element separated by the given string
+* string slices: s[1:4] == characters 1, 2, and 3 of s
+        - negative indexing (starting with -1 as last char) goes from end
+          of string
+        - s[:n] + s[n:] == s (always true)
+* == overloaded to properly compare strings
+
+-------
+ LISTS
+-------
+* if a and b are lists, a = b makes a shallow copy!
+* + works to append lists: [1, 2] + [3, 4] = [1, 2, 3, 4]
+* a string behaves like a list of its characters
+* range(start, end) --> numbers start through end-1
+
+
+-----------
+ ITERATION
+-----------
+* for (var) in (list)
+* standard while loop
+
