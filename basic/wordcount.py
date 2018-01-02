@@ -80,6 +80,7 @@ def build_dict(filename):
         new_dict[word] += 1 # if word found, increment count
       else: 
         new_dict[word] = 1 # else add word to dict
+  f.close()
   return new_dict
 
 # This basic command line argument parsing code is provided and
